@@ -23,6 +23,15 @@ const (
 	mainMod        = "index" // the twilio module
 	accountsMod    = "accounts"
 	apiAccountsMod = "apiaccounts"
+	autopilotAssistantsMod = "autopilotassistants/v1"
+	bulkexportsMod = "bulkexports/v1"
+	chatMod = "chat/v1"
+	chatv2Mod = "chat/v2"
+	conversationsMod = "conversations/v1"
+	eventsMod = "events/v1"
+	flexMod = "flex/v1"
+	ipMessagingMod = "ipmessaging/v1"
+	ipMessagingv2Mod = "ipmessaging/v2"
 )
 
 // twilioMember manufactures a type token for the Twilio package and the given module and type.
@@ -90,31 +99,217 @@ func Provider() tfbridge.ProviderInfo {
 		},
 		PreConfigureCallback: preConfigureCallback,
 		Resources: map[string]*tfbridge.ResourceInfo{
-			"twilio_accounts_credentials_aws_v1":                                          {Tok: twilioResource(accountsMod, "CredentialsAwsV1")},
-			"twilio_accounts_credentials_public_keys_v1":                                  {Tok: twilioResource(accountsMod, "CredentialsPublicKeysV1")},
-			"twilio_api_accounts_addresses":                                               {Tok: twilioResource(apiAccountsMod, "Addresses")},
-			"twilio_api_accounts_applications":                                            {Tok: twilioResource(apiAccountsMod, "Applications")},
-			"twilio_api_accounts_calls":                                                   {Tok: twilioResource(apiAccountsMod, "Calls")},
-			"twilio_api_accounts_calls_feedback_summary":                                  {Tok: twilioResource(apiAccountsMod, "CallsFeedbackSummary")},
-			"twilio_api_accounts_calls_recordings":                                        {Tok: twilioResource(apiAccountsMod, "CallsRecordings")},
-			"twilio_api_accounts_conferences_participants":                                {Tok: twilioResource(apiAccountsMod, "ConferencesParticipans")},
-			"twilio_api_accounts_incoming_phone_numbers":                                  {Tok: twilioResource(apiAccountsMod, "IncomingPhoneNumbers")},
-			"twilio_api_accounts_incoming_phone_numbers_assigned_add_ons":                 {Tok: twilioResource(apiAccountsMod, "IncomingPhoneNumbersAssignedAddons")},
-			"twilio_api_accounts_keys":                                                    {Tok: twilioResource(apiAccountsMod, "Keys")},
-			"twilio_api_accounts_messages":                                                {Tok: twilioResource(apiAccountsMod, "Messages")},
-			"twilio_api_accounts_queues":                                                  {Tok: twilioResource(apiAccountsMod, "Queues")},
-			"twilio_api_accounts_signing_keys":                                            {Tok: twilioResource(apiAccountsMod, "SigningKeys")},
-			"twilio_api_accounts_sip_credential_lists":                                    {Tok: twilioResource(apiAccountsMod, "SipCredentialsLists")},
-			"twilio_api_accounts_sip_credential_lists_credentials":                        {Tok: twilioResource(apiAccountsMod, "SipCredentialsListsCredentials")},
-			"twilio_api_accounts_sip_domains":                                             {Tok: twilioResource(apiAccountsMod, "SipDomains")},
-			"twilio_api_accounts_sip_domains_auth_calls_credential_list_mappings":         {Tok: twilioResource(apiAccountsMod, "SipDomainsAuthCallsCredentialListMappings")},
-			"twilio_api_accounts_sip_domains_auth_calls_ip_access_control_list_mappings":  {Tok: twilioResource(apiAccountsMod, "SipDomainsAuthCallsIpAccessControlListMappings")},
-			"twilio_api_accounts_sip_domains_auth_registrations_credential_list_mappings": {Tok: twilioResource(apiAccountsMod, "SipDomainsAuthRegistrationsCredentialListMappings")},
-			"twilio_api_accounts_sip_domains_credential_list_mappings":                    {Tok: twilioResource(apiAccountsMod, "SipCredentialsListsCredentials")},
-			"twilio_api_accounts_sip_domains_ip_access_control_list_mappings":             {Tok: twilioResource(apiAccountsMod, "SipDomainsIpAccessControlListMappings")},
-			"twilio_api_accounts_sip_ip_access_control_lists":                             {Tok: twilioResource(apiAccountsMod, "SipIpAccessControlLists")},
-			"twilio_api_accounts_sip_ip_access_control_lists_ip_addresses":                {Tok: twilioResource(apiAccountsMod, "SipIpAccessControlListsIpAddresses")},
-			"twilio_api_accounts_usage_triggers":                                          {Tok: twilioResource(apiAccountsMod, "UsageTriggers")},
+			"twilio_accounts_credentials_aws_v1":           {Tok: twilioResource(accountsMod, "CredentialsAwsV1")},
+			"twilio_accounts_credentials_public_keys_v1":   {Tok: twilioResource(accountsMod, "CredentialsPublicKeysV1")},
+			"twilio_api_accounts_addresses":                {Tok: twilioResource(apiAccountsMod, "Addresses")},
+			"twilio_api_accounts_applications":             {Tok: twilioResource(apiAccountsMod, "Applications")},
+			"twilio_api_accounts_calls":                    {Tok: twilioResource(apiAccountsMod, "Calls")},
+			"twilio_api_accounts_calls_feedback_summary":   {Tok: twilioResource(apiAccountsMod, "CallsFeedbackSummary")},
+			"twilio_api_accounts_calls_recordings":         {Tok: twilioResource(apiAccountsMod, "CallsRecordings")},
+			"twilio_api_accounts_conferences_participants": {Tok: twilioResource(apiAccountsMod, "ConferencesParticipans")},
+			"twilio_api_accounts_incoming_phone_numbers":   {Tok: twilioResource(apiAccountsMod, "IncomingPhoneNumbers")},
+			"twilio_api_accounts_incoming_phone_numbers_assigned_add_ons": {
+				Tok: twilioResource(apiAccountsMod, "IncomingPhoneNumbersAssignedAddons"),
+			},
+			"twilio_api_accounts_keys": {
+				Tok: twilioResource(apiAccountsMod, "Keys"),
+			},
+			"twilio_api_accounts_messages": {
+				Tok: twilioResource(apiAccountsMod, "Messages"),
+			},
+			"twilio_api_accounts_queues": {
+				Tok: twilioResource(apiAccountsMod, "Queues"),
+			},
+			"twilio_api_accounts_signing_keys": {
+				Tok: twilioResource(apiAccountsMod, "SigningKeys"),
+			},
+			"twilio_api_accounts_sip_credential_lists": {
+				Tok: twilioResource(apiAccountsMod, "SipCredentialsLists"),
+			},
+			"twilio_api_accounts_sip_credential_lists_credentials": {
+				Tok: twilioResource(apiAccountsMod, "SipCredentialsListsCredentials"),
+			},
+			"twilio_api_accounts_sip_domains": {
+				Tok: twilioResource(apiAccountsMod, "SipDomains"),
+			},
+			"twilio_api_accounts_sip_domains_auth_calls_credential_list_mappings": {
+				Tok: twilioResource(apiAccountsMod, "SipDomainsAuthCallsCredentialListMappings"),
+			},
+			"twilio_api_accounts_sip_domains_auth_calls_ip_access_control_list_mappings": {
+				Tok: twilioResource(apiAccountsMod, "SipDomainsAuthCallsIpAccessControlListMappings"),
+			},
+			"twilio_api_accounts_sip_domains_auth_registrations_credential_list_mappings": {
+				Tok: twilioResource(apiAccountsMod, "SipDomainsAuthRegistrationsCredentialListMappings"),
+			},
+			"twilio_api_accounts_sip_domains_credential_list_mappings": {
+				Tok: twilioResource(apiAccountsMod, "SipDomainsCredentialListMappings"),
+			},
+			"twilio_api_accounts_sip_domains_ip_access_control_list_mappings": {
+				Tok: twilioResource(apiAccountsMod, "SipDomainsIpAccessControlListMappings"),
+			},
+			"twilio_api_accounts_sip_ip_access_control_lists": {
+				Tok: twilioResource(apiAccountsMod, "SipIpAccessControlLists"),
+			},
+			"twilio_api_accounts_sip_ip_access_control_lists_ip_addresses": {
+				Tok: twilioResource(apiAccountsMod, "SipIpAccessControlListsIpAddresses"),
+			},
+			"twilio_api_accounts_usage_triggers": {
+				Tok: twilioResource(apiAccountsMod, "UsageTriggers"),
+			},
+			"twilio_autopilot_assistants_field_types_field_values_v1": {
+				Tok: twilioResource(autopilotAssistantsMod, "FieldTypesFieldValues"),
+			},
+			"twilio_autopilot_assistants_field_types_v1": {
+				Tok: twilioResource(autopilotAssistantsMod, "FieldTypes"),
+			},
+			"twilio_autopilot_assistants_model_builds_v1": {
+				Tok: twilioResource(autopilotAssistantsMod, "ModelBuilds"),
+			},
+			"twilio_autopilot_assistants_queries_v1": {
+				Tok: twilioResource(autopilotAssistantsMod, "Queries"),
+			},
+			"twilio_autopilot_assistants_tasks_fields_v1": {
+				Tok: twilioResource(autopilotAssistantsMod, "TasksFields"),
+			},
+			"twilio_autopilot_assistants_tasks_samples_v1": {
+				Tok: twilioResource(autopilotAssistantsMod, "TasksSamples"),
+			},
+			"twilio_autopilot_assistants_tasks_v1": {
+				Tok: twilioResource(autopilotAssistantsMod, "Tasks"),
+			},
+			"twilio_autopilot_assistants_v1": {
+				Tok: twilioResource(autopilotAssistantsMod, "Assistants"),
+			},
+			"twilio_autopilot_assistants_webhooks_v1": {
+				Tok: twilioResource(autopilotAssistantsMod, "Webhooks"),
+			},
+			"twilio_bulkexports_exports_jobs_v1": {
+				Tok: twilioResource(bulkexportsMod, "ExportsJobs"),
+			},
+			"twilio_chat_credentials_v1": {
+				Tok: twilioResource(chatMod, "Credentials"),
+			},
+			// "twilio_chat_credentials_v2": {
+			// 	Tok: twilioResource(chatv2Mod, "Credentials"),
+			// },
+			"twilio_chat_services_channels_invites_v1": {
+				Tok: twilioResource(chatMod, "ServiceChannelsInvites"),
+			},
+			"twilio_chat_services_channels_invites_v2": {
+				Tok: twilioResource(chatv2Mod, "ServicesChannelsInvites"),
+			},
+			"twilio_chat_services_channels_members_v1": {
+				Tok: twilioResource(chatMod, "ServicesChannelsMembers"),
+			},
+			"twilio_chat_services_channels_members_v2": {
+				Tok: twilioResource(chatv2Mod, "ServicesChannelsMembers"),
+			},
+			"twilio_chat_services_channels_messages_v1": {
+				Tok: twilioResource(chatMod, "ServicesChannelsMessages"),
+			},
+			"twilio_chat_services_channels_messages_v2": {
+				Tok: twilioResource(chatv2Mod, "ServicesChannelsMessages"),
+			},
+			"twilio_chat_services_channels_v1": {
+				Tok: twilioResource(chatMod, "ServicesChannels"),
+			},
+			"twilio_chat_services_channels_v2": {
+				Tok: twilioResource(chatv2Mod, "ServicesChannels"),
+			},
+			"twilio_chat_services_channels_webhooks_v2": {
+				Tok: twilioResource(chatv2Mod, "ServicesChannelsWebhooks"),
+			},
+			"twilio_chat_services_roles_v1": {
+				Tok: twilioResource(chatMod, "ServicesRoles"),
+			},
+			"twilio_chat_services_roles_v2": {
+				Tok: twilioResource(chatv2Mod, "ServicesRoles"),
+			},
+			"twilio_chat_services_users_v1": {
+				Tok: twilioResource(chatMod, "ServicesUsers"),
+			},
+			"twilio_chat_services_users_v2": {
+				Tok: twilioResource(chatv2Mod, "ServicesUsers"),
+			},
+			"twilio_chat_services_v1": {
+				Tok: twilioResource(chatMod, "Services"),
+			},
+			"twilio_chat_services_v2": {
+				Tok: twilioResource(chatv2Mod, "Services"),
+			},
+			"twilio_conversations_conversations_messages_v1": {
+				Tok: twilioResource(conversationsMod, "ConversationsMessages"),
+			},
+			"twilio_conversations_conversations_participants_v1": {
+				Tok: twilioResource(conversationsMod, "ConversationsParticipants"),
+			},
+			"twilio_conversations_conversations_v1": {
+				Tok: twilioResource(conversationsMod, "Conversations"),
+			},
+			"twilio_conversations_conversations_webhooks_v1": {
+				Tok: twilioResource(conversationsMod, "ConversationsWebhooks"),
+			},
+			"twilio_conversations_credentials_v1": {
+				Tok: twilioResource(conversationsMod, "Credentials"),
+			},
+			"twilio_conversations_roles_v1": {
+				Tok: twilioResource(conversationsMod, "Roles"),
+			},
+			"twilio_conversations_services_conversations_messages_v1": {
+				Tok: twilioResource(conversationsMod, "ServicesConversationsMessages"),
+			},
+			"twilio_conversations_services_conversations_participants_v1": {
+				Tok: twilioResource(conversationsMod, "ServicesConversationsParticipants"),
+			},
+			"twilio_conversations_services_conversations_v1": {
+				Tok: twilioResource(conversationsMod, "ServicesConversations"),
+			},
+			"twilio_conversations_services_conversations_webhooks_v1": {
+				Tok: twilioResource(conversationsMod, "ServicesConversationsWebhooks"),
+			},
+			"twilio_conversations_services_roles_v1": {
+				Tok: twilioResource(conversationsMod, "ServicesRoles"),
+			},
+			"twilio_conversations_services_users_v1": {
+				Tok: twilioResource(conversationsMod, "ServicesUsers"),
+			},
+			"twilio_conversations_services_v1": {
+				Tok: twilioResource(conversationsMod, "Services"),
+			},
+			"twilio_conversations_users_v1": {
+				Tok: twilioResource(conversationsMod, "Users"),
+			},
+			"twilio_events_sinks_v1": {
+				Tok: twilioResource(eventsMod, "Sinks"),
+			},
+			"twilio_events_subscriptions_subscribed_events_v1": {
+				Tok: twilioResource(eventsMod, "SubscriptionsSubscribedEvents"),
+			},
+			"twilio_events_subscriptions_v1": {
+				Tok: twilioResource(eventsMod, "Subscriptions"),
+			},
+			"twilio_flex_channels_v1": {
+				Tok: twilioResource(flexMod, "Channels"),
+			},
+			"twilio_flex_flex_flows_v1": {
+				Tok: twilioResource(flexMod, "FlexFlows"),
+			},
+			"twilio_flex_web_channels_v1": {
+				Tok: twilioResource(flexMod, "WebChannels"),
+			},
+			"twilio_ip_messaging_credentials_v1": {
+				Tok: twilioResource(ipMessagingMod, "Credentials"),
+			},
+			"twilio_ip_messaging_credentials_v2": {
+				Tok: twilioResource(ipMessagingv2Mod, "Credentials"),
+			},
+			"twilio_ip_messaging_services_channels_invites_v1": {
+				Tok: twilioResource(ipMessagingMod, "ServicesChannelsInvites"),
+			},
+			"twilio_ip_messaging_services_channels_invites_v2": {
+				Tok: twilioResource(ipMessagingv2Mod, "ServicesChannelsInvites"),
+			},
+
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			// Map each resource in the Terraform provider to a Pulumi function. An example

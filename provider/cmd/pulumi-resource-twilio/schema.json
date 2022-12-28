@@ -1,16 +1,18 @@
 {
     "name": "twilio",
-    "description": "A Pulumi package for creating and managing xyz cloud resources.",
+    "displayName": "Twilio",
+    "description": "A Pulumi package for creating and managing Twilio cloud resources.",
     "keywords": [
         "pulumi",
         "twilio",
         "category/cloud"
     ],
-    "homepage": "https://www.pulumi.com",
+    "homepage": "https://leebriggs.co.uk/projects#pulumi-twilio",
     "license": "Apache-2.0",
     "attribution": "This Pulumi package is based on the [`twilio` Terraform Provider](https://github.com/twilio/terraform-provider-twilio).",
     "repository": "https://github.com/lbrlabs/pulumi-twilio",
-    "publisher": "Pulumi",
+    "pluginDownloadURL": "github://api.github.com/lbrlabs",
+    "publisher": "lbrlabs",
     "meta": {
         "moduleFormat": "(.*)(?:/[^/]*)"
     },
@@ -37,7 +39,7 @@
                 "@types/node": "^10.0.0"
             },
             "disableUnionOutputTypes": true,
-            "packageDescription": "A Pulumi package for creating and managing xyz cloud resources.",
+            "packageDescription": "A Pulumi package for creating and managing Twilio cloud resources.",
             "packageName": "",
             "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/twilio/terraform-provider-twilio)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-twilio` repo](https://github.com/lbrlabs/pulumi-twilio/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-twilio` repo](https://github.com/twilio/terraform-provider-twilio/issues).",
             "typescriptVersion": ""
@@ -132,5 +134,3457 @@
             "password",
             "username"
         ]
+    },
+    "resources": {
+        "twilio:accounts/credentialsAwsV1:CredentialsAwsV1": {
+            "properties": {
+                "accountSid": {
+                    "type": "string"
+                },
+                "credentials": {
+                    "type": "string"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "accountSid",
+                "credentials",
+                "friendlyName",
+                "sid"
+            ],
+            "inputProperties": {
+                "accountSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "credentials": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "friendlyName": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "credentials"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering CredentialsAwsV1 resources.\n",
+                "properties": {
+                    "accountSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "credentials": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:accounts/credentialsPublicKeysV1:CredentialsPublicKeysV1": {
+            "properties": {
+                "accountSid": {
+                    "type": "string"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "publicKey": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "accountSid",
+                "friendlyName",
+                "publicKey",
+                "sid"
+            ],
+            "inputProperties": {
+                "accountSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "publicKey": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "publicKey"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering CredentialsPublicKeysV1 resources.\n",
+                "properties": {
+                    "accountSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "publicKey": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/addresses:Addresses": {
+            "properties": {
+                "autoCorrectAddress": {
+                    "type": "boolean"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "customerName": {
+                    "type": "string"
+                },
+                "emergencyEnabled": {
+                    "type": "boolean"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "isoCountry": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "postalCode": {
+                    "type": "string"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "street": {
+                    "type": "string"
+                },
+                "streetSecondary": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "autoCorrectAddress",
+                "city",
+                "customerName",
+                "emergencyEnabled",
+                "friendlyName",
+                "isoCountry",
+                "pathAccountSid",
+                "postalCode",
+                "region",
+                "sid",
+                "street",
+                "streetSecondary"
+            ],
+            "inputProperties": {
+                "autoCorrectAddress": {
+                    "type": "boolean"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "customerName": {
+                    "type": "string"
+                },
+                "emergencyEnabled": {
+                    "type": "boolean"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "isoCountry": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "postalCode": {
+                    "type": "string"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "street": {
+                    "type": "string"
+                },
+                "streetSecondary": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "city",
+                "customerName",
+                "isoCountry",
+                "postalCode",
+                "region",
+                "street"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Addresses resources.\n",
+                "properties": {
+                    "autoCorrectAddress": {
+                        "type": "boolean"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "customerName": {
+                        "type": "string"
+                    },
+                    "emergencyEnabled": {
+                        "type": "boolean"
+                    },
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "isoCountry": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "postalCode": {
+                        "type": "string"
+                    },
+                    "region": {
+                        "type": "string"
+                    },
+                    "sid": {
+                        "type": "string"
+                    },
+                    "street": {
+                        "type": "string"
+                    },
+                    "streetSecondary": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/applications:Applications": {
+            "properties": {
+                "apiVersion": {
+                    "type": "string"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "messageStatusCallback": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "smsFallbackMethod": {
+                    "type": "string"
+                },
+                "smsFallbackUrl": {
+                    "type": "string"
+                },
+                "smsMethod": {
+                    "type": "string"
+                },
+                "smsStatusCallback": {
+                    "type": "string"
+                },
+                "smsUrl": {
+                    "type": "string"
+                },
+                "statusCallback": {
+                    "type": "string"
+                },
+                "statusCallbackMethod": {
+                    "type": "string"
+                },
+                "voiceCallerIdLookup": {
+                    "type": "boolean"
+                },
+                "voiceFallbackMethod": {
+                    "type": "string"
+                },
+                "voiceFallbackUrl": {
+                    "type": "string"
+                },
+                "voiceMethod": {
+                    "type": "string"
+                },
+                "voiceUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "apiVersion",
+                "friendlyName",
+                "messageStatusCallback",
+                "pathAccountSid",
+                "sid",
+                "smsFallbackMethod",
+                "smsFallbackUrl",
+                "smsMethod",
+                "smsStatusCallback",
+                "smsUrl",
+                "statusCallback",
+                "statusCallbackMethod",
+                "voiceCallerIdLookup",
+                "voiceFallbackMethod",
+                "voiceFallbackUrl",
+                "voiceMethod",
+                "voiceUrl"
+            ],
+            "inputProperties": {
+                "apiVersion": {
+                    "type": "string"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "messageStatusCallback": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "smsFallbackMethod": {
+                    "type": "string"
+                },
+                "smsFallbackUrl": {
+                    "type": "string"
+                },
+                "smsMethod": {
+                    "type": "string"
+                },
+                "smsStatusCallback": {
+                    "type": "string"
+                },
+                "smsUrl": {
+                    "type": "string"
+                },
+                "statusCallback": {
+                    "type": "string"
+                },
+                "statusCallbackMethod": {
+                    "type": "string"
+                },
+                "voiceCallerIdLookup": {
+                    "type": "boolean"
+                },
+                "voiceFallbackMethod": {
+                    "type": "string"
+                },
+                "voiceFallbackUrl": {
+                    "type": "string"
+                },
+                "voiceMethod": {
+                    "type": "string"
+                },
+                "voiceUrl": {
+                    "type": "string"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Applications resources.\n",
+                "properties": {
+                    "apiVersion": {
+                        "type": "string"
+                    },
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "messageStatusCallback": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "sid": {
+                        "type": "string"
+                    },
+                    "smsFallbackMethod": {
+                        "type": "string"
+                    },
+                    "smsFallbackUrl": {
+                        "type": "string"
+                    },
+                    "smsMethod": {
+                        "type": "string"
+                    },
+                    "smsStatusCallback": {
+                        "type": "string"
+                    },
+                    "smsUrl": {
+                        "type": "string"
+                    },
+                    "statusCallback": {
+                        "type": "string"
+                    },
+                    "statusCallbackMethod": {
+                        "type": "string"
+                    },
+                    "voiceCallerIdLookup": {
+                        "type": "boolean"
+                    },
+                    "voiceFallbackMethod": {
+                        "type": "string"
+                    },
+                    "voiceFallbackUrl": {
+                        "type": "string"
+                    },
+                    "voiceMethod": {
+                        "type": "string"
+                    },
+                    "voiceUrl": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/calls:Calls": {
+            "properties": {
+                "applicationSid": {
+                    "type": "string"
+                },
+                "asyncAmd": {
+                    "type": "string"
+                },
+                "asyncAmdStatusCallback": {
+                    "type": "string"
+                },
+                "asyncAmdStatusCallbackMethod": {
+                    "type": "string"
+                },
+                "byoc": {
+                    "type": "string"
+                },
+                "callReason": {
+                    "type": "string"
+                },
+                "callToken": {
+                    "type": "string"
+                },
+                "callerId": {
+                    "type": "string"
+                },
+                "fallbackMethod": {
+                    "type": "string"
+                },
+                "fallbackUrl": {
+                    "type": "string"
+                },
+                "from": {
+                    "type": "string"
+                },
+                "machineDetection": {
+                    "type": "string"
+                },
+                "machineDetectionSilenceTimeout": {
+                    "type": "integer"
+                },
+                "machineDetectionSpeechEndThreshold": {
+                    "type": "integer"
+                },
+                "machineDetectionSpeechThreshold": {
+                    "type": "integer"
+                },
+                "machineDetectionTimeout": {
+                    "type": "integer"
+                },
+                "method": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "record": {
+                    "type": "boolean"
+                },
+                "recordingChannels": {
+                    "type": "string"
+                },
+                "recordingStatusCallback": {
+                    "type": "string"
+                },
+                "recordingStatusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "recordingStatusCallbackMethod": {
+                    "type": "string"
+                },
+                "recordingTrack": {
+                    "type": "string"
+                },
+                "sendDigits": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "sipAuthPassword": {
+                    "type": "string"
+                },
+                "sipAuthUsername": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "statusCallback": {
+                    "type": "string"
+                },
+                "statusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "statusCallbackMethod": {
+                    "type": "string"
+                },
+                "timeLimit": {
+                    "type": "integer"
+                },
+                "timeout": {
+                    "type": "integer"
+                },
+                "to": {
+                    "type": "string"
+                },
+                "trim": {
+                    "type": "string"
+                },
+                "twiml": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "applicationSid",
+                "asyncAmd",
+                "asyncAmdStatusCallback",
+                "asyncAmdStatusCallbackMethod",
+                "byoc",
+                "callReason",
+                "callToken",
+                "callerId",
+                "fallbackMethod",
+                "fallbackUrl",
+                "from",
+                "machineDetection",
+                "machineDetectionSilenceTimeout",
+                "machineDetectionSpeechEndThreshold",
+                "machineDetectionSpeechThreshold",
+                "machineDetectionTimeout",
+                "method",
+                "pathAccountSid",
+                "record",
+                "recordingChannels",
+                "recordingStatusCallback",
+                "recordingStatusCallbackEvents",
+                "recordingStatusCallbackMethod",
+                "recordingTrack",
+                "sendDigits",
+                "sid",
+                "sipAuthPassword",
+                "sipAuthUsername",
+                "status",
+                "statusCallback",
+                "statusCallbackEvents",
+                "statusCallbackMethod",
+                "timeLimit",
+                "timeout",
+                "to",
+                "trim",
+                "twiml",
+                "url"
+            ],
+            "inputProperties": {
+                "applicationSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "asyncAmd": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "asyncAmdStatusCallback": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "asyncAmdStatusCallbackMethod": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "byoc": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "callReason": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "callToken": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "callerId": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "fallbackMethod": {
+                    "type": "string"
+                },
+                "fallbackUrl": {
+                    "type": "string"
+                },
+                "from": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "machineDetection": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "machineDetectionSilenceTimeout": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "machineDetectionSpeechEndThreshold": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "machineDetectionSpeechThreshold": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "machineDetectionTimeout": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "method": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "record": {
+                    "type": "boolean",
+                    "willReplaceOnChanges": true
+                },
+                "recordingChannels": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "recordingStatusCallback": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "recordingStatusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "willReplaceOnChanges": true
+                },
+                "recordingStatusCallbackMethod": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "recordingTrack": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "sendDigits": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "sipAuthPassword": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "sipAuthUsername": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "status": {
+                    "type": "string"
+                },
+                "statusCallback": {
+                    "type": "string"
+                },
+                "statusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "willReplaceOnChanges": true
+                },
+                "statusCallbackMethod": {
+                    "type": "string"
+                },
+                "timeLimit": {
+                    "type": "integer"
+                },
+                "timeout": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "to": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "trim": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "twiml": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "from",
+                "to"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Calls resources.\n",
+                "properties": {
+                    "applicationSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "asyncAmd": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "asyncAmdStatusCallback": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "asyncAmdStatusCallbackMethod": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "byoc": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "callReason": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "callToken": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "callerId": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "fallbackMethod": {
+                        "type": "string"
+                    },
+                    "fallbackUrl": {
+                        "type": "string"
+                    },
+                    "from": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "machineDetection": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "machineDetectionSilenceTimeout": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "machineDetectionSpeechEndThreshold": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "machineDetectionSpeechThreshold": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "machineDetectionTimeout": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "method": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "record": {
+                        "type": "boolean",
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingChannels": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingStatusCallback": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingStatusCallbackEvents": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingStatusCallbackMethod": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingTrack": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sendDigits": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    },
+                    "sipAuthPassword": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sipAuthUsername": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "statusCallback": {
+                        "type": "string"
+                    },
+                    "statusCallbackEvents": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "willReplaceOnChanges": true
+                    },
+                    "statusCallbackMethod": {
+                        "type": "string"
+                    },
+                    "timeLimit": {
+                        "type": "integer"
+                    },
+                    "timeout": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "to": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "trim": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "twiml": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/callsFeedbackSummary:CallsFeedbackSummary": {
+            "properties": {
+                "endDate": {
+                    "type": "string"
+                },
+                "includeSubaccounts": {
+                    "type": "boolean"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "statusCallback": {
+                    "type": "string"
+                },
+                "statusCallbackMethod": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "endDate",
+                "includeSubaccounts",
+                "pathAccountSid",
+                "sid",
+                "startDate",
+                "statusCallback",
+                "statusCallbackMethod"
+            ],
+            "inputProperties": {
+                "endDate": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "includeSubaccounts": {
+                    "type": "boolean",
+                    "willReplaceOnChanges": true
+                },
+                "pathAccountSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "startDate": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "statusCallback": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "statusCallbackMethod": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "endDate",
+                "startDate"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering CallsFeedbackSummary resources.\n",
+                "properties": {
+                    "endDate": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "includeSubaccounts": {
+                        "type": "boolean",
+                        "willReplaceOnChanges": true
+                    },
+                    "pathAccountSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "statusCallback": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "statusCallbackMethod": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/callsRecordings:CallsRecordings": {
+            "properties": {
+                "callSid": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "pauseBehavior": {
+                    "type": "string"
+                },
+                "recordingChannels": {
+                    "type": "string"
+                },
+                "recordingStatusCallback": {
+                    "type": "string"
+                },
+                "recordingStatusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "recordingStatusCallbackMethod": {
+                    "type": "string"
+                },
+                "recordingTrack": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "trim": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "callSid",
+                "pathAccountSid",
+                "pauseBehavior",
+                "recordingChannels",
+                "recordingStatusCallback",
+                "recordingStatusCallbackEvents",
+                "recordingStatusCallbackMethod",
+                "recordingTrack",
+                "sid",
+                "status",
+                "trim"
+            ],
+            "inputProperties": {
+                "callSid": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "pauseBehavior": {
+                    "type": "string"
+                },
+                "recordingChannels": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "recordingStatusCallback": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "recordingStatusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "willReplaceOnChanges": true
+                },
+                "recordingStatusCallbackMethod": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "recordingTrack": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "status": {
+                    "type": "string"
+                },
+                "trim": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "callSid"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering CallsRecordings resources.\n",
+                "properties": {
+                    "callSid": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "pauseBehavior": {
+                        "type": "string"
+                    },
+                    "recordingChannels": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingStatusCallback": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingStatusCallbackEvents": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingStatusCallbackMethod": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingTrack": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "trim": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/conferencesParticipans:ConferencesParticipans": {
+            "properties": {
+                "amdStatusCallback": {
+                    "type": "string"
+                },
+                "amdStatusCallbackMethod": {
+                    "type": "string"
+                },
+                "announceMethod": {
+                    "type": "string"
+                },
+                "announceUrl": {
+                    "type": "string"
+                },
+                "beep": {
+                    "type": "string"
+                },
+                "beepOnExit": {
+                    "type": "boolean"
+                },
+                "byoc": {
+                    "type": "string"
+                },
+                "callReason": {
+                    "type": "string"
+                },
+                "callSid": {
+                    "type": "string"
+                },
+                "callSidToCoach": {
+                    "type": "string"
+                },
+                "callerId": {
+                    "type": "string"
+                },
+                "coaching": {
+                    "type": "boolean"
+                },
+                "conferenceRecord": {
+                    "type": "string"
+                },
+                "conferenceRecordingStatusCallback": {
+                    "type": "string"
+                },
+                "conferenceRecordingStatusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "conferenceRecordingStatusCallbackMethod": {
+                    "type": "string"
+                },
+                "conferenceSid": {
+                    "type": "string"
+                },
+                "conferenceStatusCallback": {
+                    "type": "string"
+                },
+                "conferenceStatusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "conferenceStatusCallbackMethod": {
+                    "type": "string"
+                },
+                "conferenceTrim": {
+                    "type": "string"
+                },
+                "earlyMedia": {
+                    "type": "boolean"
+                },
+                "endConferenceOnExit": {
+                    "type": "boolean"
+                },
+                "from": {
+                    "type": "string"
+                },
+                "hold": {
+                    "type": "boolean"
+                },
+                "holdMethod": {
+                    "type": "string"
+                },
+                "holdUrl": {
+                    "type": "string"
+                },
+                "jitterBufferSize": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "machineDetection": {
+                    "type": "string"
+                },
+                "machineDetectionSilenceTimeout": {
+                    "type": "integer"
+                },
+                "machineDetectionSpeechEndThreshold": {
+                    "type": "integer"
+                },
+                "machineDetectionSpeechThreshold": {
+                    "type": "integer"
+                },
+                "machineDetectionTimeout": {
+                    "type": "integer"
+                },
+                "maxParticipants": {
+                    "type": "integer"
+                },
+                "muted": {
+                    "type": "boolean"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "record": {
+                    "type": "boolean"
+                },
+                "recordingChannels": {
+                    "type": "string"
+                },
+                "recordingStatusCallback": {
+                    "type": "string"
+                },
+                "recordingStatusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "recordingStatusCallbackMethod": {
+                    "type": "string"
+                },
+                "recordingTrack": {
+                    "type": "string"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "sipAuthPassword": {
+                    "type": "string"
+                },
+                "sipAuthUsername": {
+                    "type": "string"
+                },
+                "startConferenceOnEnter": {
+                    "type": "boolean"
+                },
+                "statusCallback": {
+                    "type": "string"
+                },
+                "statusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "statusCallbackMethod": {
+                    "type": "string"
+                },
+                "timeLimit": {
+                    "type": "integer"
+                },
+                "timeout": {
+                    "type": "integer"
+                },
+                "to": {
+                    "type": "string"
+                },
+                "waitMethod": {
+                    "type": "string"
+                },
+                "waitUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "amdStatusCallback",
+                "amdStatusCallbackMethod",
+                "announceMethod",
+                "announceUrl",
+                "beep",
+                "beepOnExit",
+                "byoc",
+                "callReason",
+                "callSid",
+                "callSidToCoach",
+                "callerId",
+                "coaching",
+                "conferenceRecord",
+                "conferenceRecordingStatusCallback",
+                "conferenceRecordingStatusCallbackEvents",
+                "conferenceRecordingStatusCallbackMethod",
+                "conferenceSid",
+                "conferenceStatusCallback",
+                "conferenceStatusCallbackEvents",
+                "conferenceStatusCallbackMethod",
+                "conferenceTrim",
+                "earlyMedia",
+                "endConferenceOnExit",
+                "from",
+                "hold",
+                "holdMethod",
+                "holdUrl",
+                "jitterBufferSize",
+                "label",
+                "machineDetection",
+                "machineDetectionSilenceTimeout",
+                "machineDetectionSpeechEndThreshold",
+                "machineDetectionSpeechThreshold",
+                "machineDetectionTimeout",
+                "maxParticipants",
+                "muted",
+                "pathAccountSid",
+                "record",
+                "recordingChannels",
+                "recordingStatusCallback",
+                "recordingStatusCallbackEvents",
+                "recordingStatusCallbackMethod",
+                "recordingTrack",
+                "region",
+                "sipAuthPassword",
+                "sipAuthUsername",
+                "startConferenceOnEnter",
+                "statusCallback",
+                "statusCallbackEvents",
+                "statusCallbackMethod",
+                "timeLimit",
+                "timeout",
+                "to",
+                "waitMethod",
+                "waitUrl"
+            ],
+            "inputProperties": {
+                "amdStatusCallback": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "amdStatusCallbackMethod": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "announceMethod": {
+                    "type": "string"
+                },
+                "announceUrl": {
+                    "type": "string"
+                },
+                "beep": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "beepOnExit": {
+                    "type": "boolean"
+                },
+                "byoc": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "callReason": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "callSidToCoach": {
+                    "type": "string"
+                },
+                "callerId": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "coaching": {
+                    "type": "boolean"
+                },
+                "conferenceRecord": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "conferenceRecordingStatusCallback": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "conferenceRecordingStatusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "willReplaceOnChanges": true
+                },
+                "conferenceRecordingStatusCallbackMethod": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "conferenceSid": {
+                    "type": "string"
+                },
+                "conferenceStatusCallback": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "conferenceStatusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "willReplaceOnChanges": true
+                },
+                "conferenceStatusCallbackMethod": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "conferenceTrim": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "earlyMedia": {
+                    "type": "boolean",
+                    "willReplaceOnChanges": true
+                },
+                "endConferenceOnExit": {
+                    "type": "boolean"
+                },
+                "from": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "hold": {
+                    "type": "boolean"
+                },
+                "holdMethod": {
+                    "type": "string"
+                },
+                "holdUrl": {
+                    "type": "string"
+                },
+                "jitterBufferSize": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "label": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "machineDetection": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "machineDetectionSilenceTimeout": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "machineDetectionSpeechEndThreshold": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "machineDetectionSpeechThreshold": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "machineDetectionTimeout": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "maxParticipants": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "muted": {
+                    "type": "boolean"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "record": {
+                    "type": "boolean",
+                    "willReplaceOnChanges": true
+                },
+                "recordingChannels": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "recordingStatusCallback": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "recordingStatusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "willReplaceOnChanges": true
+                },
+                "recordingStatusCallbackMethod": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "recordingTrack": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "region": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "sipAuthPassword": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "sipAuthUsername": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "startConferenceOnEnter": {
+                    "type": "boolean",
+                    "willReplaceOnChanges": true
+                },
+                "statusCallback": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "statusCallbackEvents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "willReplaceOnChanges": true
+                },
+                "statusCallbackMethod": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "timeLimit": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "timeout": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "to": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "waitMethod": {
+                    "type": "string"
+                },
+                "waitUrl": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "conferenceSid",
+                "from",
+                "to"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ConferencesParticipans resources.\n",
+                "properties": {
+                    "amdStatusCallback": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "amdStatusCallbackMethod": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "announceMethod": {
+                        "type": "string"
+                    },
+                    "announceUrl": {
+                        "type": "string"
+                    },
+                    "beep": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "beepOnExit": {
+                        "type": "boolean"
+                    },
+                    "byoc": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "callReason": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "callSid": {
+                        "type": "string"
+                    },
+                    "callSidToCoach": {
+                        "type": "string"
+                    },
+                    "callerId": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "coaching": {
+                        "type": "boolean"
+                    },
+                    "conferenceRecord": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "conferenceRecordingStatusCallback": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "conferenceRecordingStatusCallbackEvents": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "willReplaceOnChanges": true
+                    },
+                    "conferenceRecordingStatusCallbackMethod": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "conferenceSid": {
+                        "type": "string"
+                    },
+                    "conferenceStatusCallback": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "conferenceStatusCallbackEvents": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "willReplaceOnChanges": true
+                    },
+                    "conferenceStatusCallbackMethod": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "conferenceTrim": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "earlyMedia": {
+                        "type": "boolean",
+                        "willReplaceOnChanges": true
+                    },
+                    "endConferenceOnExit": {
+                        "type": "boolean"
+                    },
+                    "from": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "hold": {
+                        "type": "boolean"
+                    },
+                    "holdMethod": {
+                        "type": "string"
+                    },
+                    "holdUrl": {
+                        "type": "string"
+                    },
+                    "jitterBufferSize": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "label": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "machineDetection": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "machineDetectionSilenceTimeout": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "machineDetectionSpeechEndThreshold": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "machineDetectionSpeechThreshold": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "machineDetectionTimeout": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "maxParticipants": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "muted": {
+                        "type": "boolean"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "record": {
+                        "type": "boolean",
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingChannels": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingStatusCallback": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingStatusCallbackEvents": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingStatusCallbackMethod": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "recordingTrack": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "region": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sipAuthPassword": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sipAuthUsername": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "startConferenceOnEnter": {
+                        "type": "boolean",
+                        "willReplaceOnChanges": true
+                    },
+                    "statusCallback": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "statusCallbackEvents": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "willReplaceOnChanges": true
+                    },
+                    "statusCallbackMethod": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "timeLimit": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "timeout": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "to": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "waitMethod": {
+                        "type": "string"
+                    },
+                    "waitUrl": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/incomingPhoneNumbers:IncomingPhoneNumbers": {
+            "properties": {
+                "accountSid": {
+                    "type": "string"
+                },
+                "addressSid": {
+                    "type": "string"
+                },
+                "apiVersion": {
+                    "type": "string"
+                },
+                "areaCode": {
+                    "type": "string"
+                },
+                "bundleSid": {
+                    "type": "string"
+                },
+                "emergencyAddressSid": {
+                    "type": "string"
+                },
+                "emergencyStatus": {
+                    "type": "string"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "identitySid": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "phoneNumber": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "smsApplicationSid": {
+                    "type": "string"
+                },
+                "smsFallbackMethod": {
+                    "type": "string"
+                },
+                "smsFallbackUrl": {
+                    "type": "string"
+                },
+                "smsMethod": {
+                    "type": "string"
+                },
+                "smsUrl": {
+                    "type": "string"
+                },
+                "statusCallback": {
+                    "type": "string"
+                },
+                "statusCallbackMethod": {
+                    "type": "string"
+                },
+                "trunkSid": {
+                    "type": "string"
+                },
+                "voiceApplicationSid": {
+                    "type": "string"
+                },
+                "voiceCallerIdLookup": {
+                    "type": "boolean"
+                },
+                "voiceFallbackMethod": {
+                    "type": "string"
+                },
+                "voiceFallbackUrl": {
+                    "type": "string"
+                },
+                "voiceMethod": {
+                    "type": "string"
+                },
+                "voiceReceiveMode": {
+                    "type": "string"
+                },
+                "voiceUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "accountSid",
+                "addressSid",
+                "apiVersion",
+                "areaCode",
+                "bundleSid",
+                "emergencyAddressSid",
+                "emergencyStatus",
+                "friendlyName",
+                "identitySid",
+                "pathAccountSid",
+                "phoneNumber",
+                "sid",
+                "smsApplicationSid",
+                "smsFallbackMethod",
+                "smsFallbackUrl",
+                "smsMethod",
+                "smsUrl",
+                "statusCallback",
+                "statusCallbackMethod",
+                "trunkSid",
+                "voiceApplicationSid",
+                "voiceCallerIdLookup",
+                "voiceFallbackMethod",
+                "voiceFallbackUrl",
+                "voiceMethod",
+                "voiceReceiveMode",
+                "voiceUrl"
+            ],
+            "inputProperties": {
+                "accountSid": {
+                    "type": "string"
+                },
+                "addressSid": {
+                    "type": "string"
+                },
+                "apiVersion": {
+                    "type": "string"
+                },
+                "areaCode": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "bundleSid": {
+                    "type": "string"
+                },
+                "emergencyAddressSid": {
+                    "type": "string"
+                },
+                "emergencyStatus": {
+                    "type": "string"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "identitySid": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "phoneNumber": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "smsApplicationSid": {
+                    "type": "string"
+                },
+                "smsFallbackMethod": {
+                    "type": "string"
+                },
+                "smsFallbackUrl": {
+                    "type": "string"
+                },
+                "smsMethod": {
+                    "type": "string"
+                },
+                "smsUrl": {
+                    "type": "string"
+                },
+                "statusCallback": {
+                    "type": "string"
+                },
+                "statusCallbackMethod": {
+                    "type": "string"
+                },
+                "trunkSid": {
+                    "type": "string"
+                },
+                "voiceApplicationSid": {
+                    "type": "string"
+                },
+                "voiceCallerIdLookup": {
+                    "type": "boolean"
+                },
+                "voiceFallbackMethod": {
+                    "type": "string"
+                },
+                "voiceFallbackUrl": {
+                    "type": "string"
+                },
+                "voiceMethod": {
+                    "type": "string"
+                },
+                "voiceReceiveMode": {
+                    "type": "string"
+                },
+                "voiceUrl": {
+                    "type": "string"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering IncomingPhoneNumbers resources.\n",
+                "properties": {
+                    "accountSid": {
+                        "type": "string"
+                    },
+                    "addressSid": {
+                        "type": "string"
+                    },
+                    "apiVersion": {
+                        "type": "string"
+                    },
+                    "areaCode": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "bundleSid": {
+                        "type": "string"
+                    },
+                    "emergencyAddressSid": {
+                        "type": "string"
+                    },
+                    "emergencyStatus": {
+                        "type": "string"
+                    },
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "identitySid": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    },
+                    "smsApplicationSid": {
+                        "type": "string"
+                    },
+                    "smsFallbackMethod": {
+                        "type": "string"
+                    },
+                    "smsFallbackUrl": {
+                        "type": "string"
+                    },
+                    "smsMethod": {
+                        "type": "string"
+                    },
+                    "smsUrl": {
+                        "type": "string"
+                    },
+                    "statusCallback": {
+                        "type": "string"
+                    },
+                    "statusCallbackMethod": {
+                        "type": "string"
+                    },
+                    "trunkSid": {
+                        "type": "string"
+                    },
+                    "voiceApplicationSid": {
+                        "type": "string"
+                    },
+                    "voiceCallerIdLookup": {
+                        "type": "boolean"
+                    },
+                    "voiceFallbackMethod": {
+                        "type": "string"
+                    },
+                    "voiceFallbackUrl": {
+                        "type": "string"
+                    },
+                    "voiceMethod": {
+                        "type": "string"
+                    },
+                    "voiceReceiveMode": {
+                        "type": "string"
+                    },
+                    "voiceUrl": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/incomingPhoneNumbersAssignedAddons:IncomingPhoneNumbersAssignedAddons": {
+            "properties": {
+                "installedAddOnSid": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "resourceSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "installedAddOnSid",
+                "pathAccountSid",
+                "resourceSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "installedAddOnSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "pathAccountSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "resourceSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "installedAddOnSid",
+                "resourceSid"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering IncomingPhoneNumbersAssignedAddons resources.\n",
+                "properties": {
+                    "installedAddOnSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "pathAccountSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "resourceSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/keys:Keys": {
+            "properties": {
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "friendlyName",
+                "pathAccountSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Keys resources.\n",
+                "properties": {
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/messages:Messages": {
+            "properties": {
+                "addressRetention": {
+                    "type": "string"
+                },
+                "applicationSid": {
+                    "type": "string"
+                },
+                "attempt": {
+                    "type": "integer"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "contentRetention": {
+                    "type": "string"
+                },
+                "contentSid": {
+                    "type": "string"
+                },
+                "contentVariables": {
+                    "type": "string"
+                },
+                "forceDelivery": {
+                    "type": "boolean"
+                },
+                "from": {
+                    "type": "string"
+                },
+                "maxPrice": {
+                    "type": "number"
+                },
+                "mediaUrls": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "messagingServiceSid": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "persistentActions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "provideFeedback": {
+                    "type": "boolean"
+                },
+                "scheduleType": {
+                    "type": "string"
+                },
+                "sendAsMms": {
+                    "type": "boolean"
+                },
+                "sendAt": {
+                    "type": "string"
+                },
+                "shortenUrls": {
+                    "type": "boolean"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "smartEncoded": {
+                    "type": "boolean"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "statusCallback": {
+                    "type": "string"
+                },
+                "to": {
+                    "type": "string"
+                },
+                "validityPeriod": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "addressRetention",
+                "applicationSid",
+                "attempt",
+                "body",
+                "contentRetention",
+                "contentSid",
+                "contentVariables",
+                "forceDelivery",
+                "from",
+                "maxPrice",
+                "mediaUrls",
+                "messagingServiceSid",
+                "pathAccountSid",
+                "persistentActions",
+                "provideFeedback",
+                "scheduleType",
+                "sendAsMms",
+                "sendAt",
+                "shortenUrls",
+                "sid",
+                "smartEncoded",
+                "status",
+                "statusCallback",
+                "to",
+                "validityPeriod"
+            ],
+            "inputProperties": {
+                "addressRetention": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "applicationSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "attempt": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                },
+                "body": {
+                    "type": "string"
+                },
+                "contentRetention": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "contentSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "contentVariables": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "forceDelivery": {
+                    "type": "boolean",
+                    "willReplaceOnChanges": true
+                },
+                "from": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "maxPrice": {
+                    "type": "number",
+                    "willReplaceOnChanges": true
+                },
+                "mediaUrls": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "willReplaceOnChanges": true
+                },
+                "messagingServiceSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "persistentActions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "willReplaceOnChanges": true
+                },
+                "provideFeedback": {
+                    "type": "boolean",
+                    "willReplaceOnChanges": true
+                },
+                "scheduleType": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "sendAsMms": {
+                    "type": "boolean",
+                    "willReplaceOnChanges": true
+                },
+                "sendAt": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "shortenUrls": {
+                    "type": "boolean",
+                    "willReplaceOnChanges": true
+                },
+                "smartEncoded": {
+                    "type": "boolean",
+                    "willReplaceOnChanges": true
+                },
+                "status": {
+                    "type": "string"
+                },
+                "statusCallback": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "to": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "validityPeriod": {
+                    "type": "integer",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "to"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Messages resources.\n",
+                "properties": {
+                    "addressRetention": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "applicationSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "attempt": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    },
+                    "body": {
+                        "type": "string"
+                    },
+                    "contentRetention": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "contentSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "contentVariables": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "forceDelivery": {
+                        "type": "boolean",
+                        "willReplaceOnChanges": true
+                    },
+                    "from": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "maxPrice": {
+                        "type": "number",
+                        "willReplaceOnChanges": true
+                    },
+                    "mediaUrls": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "willReplaceOnChanges": true
+                    },
+                    "messagingServiceSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "persistentActions": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "willReplaceOnChanges": true
+                    },
+                    "provideFeedback": {
+                        "type": "boolean",
+                        "willReplaceOnChanges": true
+                    },
+                    "scheduleType": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sendAsMms": {
+                        "type": "boolean",
+                        "willReplaceOnChanges": true
+                    },
+                    "sendAt": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "shortenUrls": {
+                        "type": "boolean",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    },
+                    "smartEncoded": {
+                        "type": "boolean",
+                        "willReplaceOnChanges": true
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "statusCallback": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "to": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "validityPeriod": {
+                        "type": "integer",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/queues:Queues": {
+            "properties": {
+                "friendlyName": {
+                    "type": "string"
+                },
+                "maxSize": {
+                    "type": "integer"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "friendlyName",
+                "maxSize",
+                "pathAccountSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "friendlyName": {
+                    "type": "string"
+                },
+                "maxSize": {
+                    "type": "integer"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "friendlyName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Queues resources.\n",
+                "properties": {
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "maxSize": {
+                        "type": "integer"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/signingKeys:SigningKeys": {
+            "properties": {
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "friendlyName",
+                "pathAccountSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SigningKeys resources.\n",
+                "properties": {
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/sipCredentialsLists:SipCredentialsLists": {
+            "properties": {
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "friendlyName",
+                "pathAccountSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "friendlyName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SipCredentialsLists resources.\n",
+                "properties": {
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/sipCredentialsListsCredentials:SipCredentialsListsCredentials": {
+            "properties": {
+                "credentialListSid": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "credentialListSid",
+                "password",
+                "pathAccountSid",
+                "sid",
+                "username"
+            ],
+            "inputProperties": {
+                "credentialListSid": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "credentialListSid",
+                "password",
+                "username"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SipCredentialsListsCredentials resources.\n",
+                "properties": {
+                    "credentialListSid": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "sid": {
+                        "type": "string"
+                    },
+                    "username": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/sipDomains:SipDomains": {
+            "properties": {
+                "byocTrunkSid": {
+                    "type": "string"
+                },
+                "domainName": {
+                    "type": "string"
+                },
+                "emergencyCallerSid": {
+                    "type": "string"
+                },
+                "emergencyCallingEnabled": {
+                    "type": "boolean"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "secure": {
+                    "type": "boolean"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "sipRegistration": {
+                    "type": "boolean"
+                },
+                "voiceFallbackMethod": {
+                    "type": "string"
+                },
+                "voiceFallbackUrl": {
+                    "type": "string"
+                },
+                "voiceMethod": {
+                    "type": "string"
+                },
+                "voiceStatusCallbackMethod": {
+                    "type": "string"
+                },
+                "voiceStatusCallbackUrl": {
+                    "type": "string"
+                },
+                "voiceUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "byocTrunkSid",
+                "domainName",
+                "emergencyCallerSid",
+                "emergencyCallingEnabled",
+                "friendlyName",
+                "pathAccountSid",
+                "secure",
+                "sid",
+                "sipRegistration",
+                "voiceFallbackMethod",
+                "voiceFallbackUrl",
+                "voiceMethod",
+                "voiceStatusCallbackMethod",
+                "voiceStatusCallbackUrl",
+                "voiceUrl"
+            ],
+            "inputProperties": {
+                "byocTrunkSid": {
+                    "type": "string"
+                },
+                "domainName": {
+                    "type": "string"
+                },
+                "emergencyCallerSid": {
+                    "type": "string"
+                },
+                "emergencyCallingEnabled": {
+                    "type": "boolean"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "secure": {
+                    "type": "boolean"
+                },
+                "sipRegistration": {
+                    "type": "boolean"
+                },
+                "voiceFallbackMethod": {
+                    "type": "string"
+                },
+                "voiceFallbackUrl": {
+                    "type": "string"
+                },
+                "voiceMethod": {
+                    "type": "string"
+                },
+                "voiceStatusCallbackMethod": {
+                    "type": "string"
+                },
+                "voiceStatusCallbackUrl": {
+                    "type": "string"
+                },
+                "voiceUrl": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "domainName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SipDomains resources.\n",
+                "properties": {
+                    "byocTrunkSid": {
+                        "type": "string"
+                    },
+                    "domainName": {
+                        "type": "string"
+                    },
+                    "emergencyCallerSid": {
+                        "type": "string"
+                    },
+                    "emergencyCallingEnabled": {
+                        "type": "boolean"
+                    },
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "secure": {
+                        "type": "boolean"
+                    },
+                    "sid": {
+                        "type": "string"
+                    },
+                    "sipRegistration": {
+                        "type": "boolean"
+                    },
+                    "voiceFallbackMethod": {
+                        "type": "string"
+                    },
+                    "voiceFallbackUrl": {
+                        "type": "string"
+                    },
+                    "voiceMethod": {
+                        "type": "string"
+                    },
+                    "voiceStatusCallbackMethod": {
+                        "type": "string"
+                    },
+                    "voiceStatusCallbackUrl": {
+                        "type": "string"
+                    },
+                    "voiceUrl": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/sipDomainsAuthCallsCredentialListMappings:SipDomainsAuthCallsCredentialListMappings": {
+            "properties": {
+                "credentialListSid": {
+                    "type": "string"
+                },
+                "domainSid": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "credentialListSid",
+                "domainSid",
+                "pathAccountSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "credentialListSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "domainSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "pathAccountSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "credentialListSid",
+                "domainSid"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SipDomainsAuthCallsCredentialListMappings resources.\n",
+                "properties": {
+                    "credentialListSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "domainSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "pathAccountSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/sipDomainsAuthCallsIpAccessControlListMappings:SipDomainsAuthCallsIpAccessControlListMappings": {
+            "properties": {
+                "domainSid": {
+                    "type": "string"
+                },
+                "ipAccessControlListSid": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "domainSid",
+                "ipAccessControlListSid",
+                "pathAccountSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "domainSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "ipAccessControlListSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "pathAccountSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "domainSid",
+                "ipAccessControlListSid"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SipDomainsAuthCallsIpAccessControlListMappings resources.\n",
+                "properties": {
+                    "domainSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "ipAccessControlListSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "pathAccountSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/sipDomainsAuthRegistrationsCredentialListMappings:SipDomainsAuthRegistrationsCredentialListMappings": {
+            "properties": {
+                "credentialListSid": {
+                    "type": "string"
+                },
+                "domainSid": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "credentialListSid",
+                "domainSid",
+                "pathAccountSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "credentialListSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "domainSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "pathAccountSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "credentialListSid",
+                "domainSid"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SipDomainsAuthRegistrationsCredentialListMappings resources.\n",
+                "properties": {
+                    "credentialListSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "domainSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "pathAccountSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/sipDomainsCredentialListMappings:SipDomainsCredentialListMappings": {
+            "properties": {
+                "credentialListSid": {
+                    "type": "string"
+                },
+                "domainSid": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "credentialListSid",
+                "domainSid",
+                "pathAccountSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "credentialListSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "domainSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "pathAccountSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "credentialListSid",
+                "domainSid"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SipDomainsCredentialListMappings resources.\n",
+                "properties": {
+                    "credentialListSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "domainSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "pathAccountSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/sipDomainsIpAccessControlListMappings:SipDomainsIpAccessControlListMappings": {
+            "properties": {
+                "domainSid": {
+                    "type": "string"
+                },
+                "ipAccessControlListSid": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "domainSid",
+                "ipAccessControlListSid",
+                "pathAccountSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "domainSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "ipAccessControlListSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "pathAccountSid": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "domainSid",
+                "ipAccessControlListSid"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SipDomainsIpAccessControlListMappings resources.\n",
+                "properties": {
+                    "domainSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "ipAccessControlListSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "pathAccountSid": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/sipIpAccessControlLists:SipIpAccessControlLists": {
+            "properties": {
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "friendlyName",
+                "pathAccountSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "friendlyName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SipIpAccessControlLists resources.\n",
+                "properties": {
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/sipIpAccessControlListsIpAddresses:SipIpAccessControlListsIpAddresses": {
+            "properties": {
+                "cidrPrefixLength": {
+                    "type": "integer"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "ipAccessControlListSid": {
+                    "type": "string"
+                },
+                "ipAddress": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cidrPrefixLength",
+                "friendlyName",
+                "ipAccessControlListSid",
+                "ipAddress",
+                "pathAccountSid",
+                "sid"
+            ],
+            "inputProperties": {
+                "cidrPrefixLength": {
+                    "type": "integer"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "ipAccessControlListSid": {
+                    "type": "string"
+                },
+                "ipAddress": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "friendlyName",
+                "ipAccessControlListSid",
+                "ipAddress"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SipIpAccessControlListsIpAddresses resources.\n",
+                "properties": {
+                    "cidrPrefixLength": {
+                        "type": "integer"
+                    },
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "ipAccessControlListSid": {
+                        "type": "string"
+                    },
+                    "ipAddress": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "sid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "twilio:apiaccounts/usageTriggers:UsageTriggers": {
+            "properties": {
+                "callbackMethod": {
+                    "type": "string"
+                },
+                "callbackUrl": {
+                    "type": "string"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "recurring": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "triggerBy": {
+                    "type": "string"
+                },
+                "triggerValue": {
+                    "type": "string"
+                },
+                "usageCategory": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "callbackMethod",
+                "callbackUrl",
+                "friendlyName",
+                "pathAccountSid",
+                "recurring",
+                "sid",
+                "triggerBy",
+                "triggerValue",
+                "usageCategory"
+            ],
+            "inputProperties": {
+                "callbackMethod": {
+                    "type": "string"
+                },
+                "callbackUrl": {
+                    "type": "string"
+                },
+                "friendlyName": {
+                    "type": "string"
+                },
+                "pathAccountSid": {
+                    "type": "string"
+                },
+                "recurring": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "triggerBy": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "triggerValue": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                },
+                "usageCategory": {
+                    "type": "string",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "callbackUrl",
+                "triggerValue",
+                "usageCategory"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering UsageTriggers resources.\n",
+                "properties": {
+                    "callbackMethod": {
+                        "type": "string"
+                    },
+                    "callbackUrl": {
+                        "type": "string"
+                    },
+                    "friendlyName": {
+                        "type": "string"
+                    },
+                    "pathAccountSid": {
+                        "type": "string"
+                    },
+                    "recurring": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "sid": {
+                        "type": "string"
+                    },
+                    "triggerBy": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "triggerValue": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    },
+                    "usageCategory": {
+                        "type": "string",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            }
+        }
     }
 }
